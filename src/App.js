@@ -1,42 +1,58 @@
-import React from 'react';
+import React, { Component } from 'react';
+import Login from './components/login/login'
+import MainPage from "./containers/MainPage"
+import { ColorModeSwitcher } from './ColorModeSwitcher';
+
+
 import {
   ChakraProvider,
-  Box,
-  Text,
-  Link,
-  VStack,
-  Code,
-  Grid,
-  theme,
+  ColorModeProvider,
+  CSSReset,
+  extendTheme, 
 } from '@chakra-ui/react';
-import { ColorModeSwitcher } from './ColorModeSwitcher';
-import { Logo } from './Logo';
 
-function App() {
-  return (
-    <ChakraProvider theme={theme}>
-      <Box textAlign="center" fontSize="xl">
-        <Grid minH="100vh" p={3}>
-          <ColorModeSwitcher justifySelf="flex-end" />
-          <VStack spacing={8}>
-            <Logo h="40vmin" pointerEvents="none" />
-            <Text>
-              Edit <Code fontSize="xl">src/App.js</Code> and save to reload.
-            </Text>
-            <Link
-              color="teal.500"
-              href="https://chakra-ui.com"
-              fontSize="2xl"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn Chakra
-            </Link>
-          </VStack>
-        </Grid>
-      </Box>
-    </ChakraProvider>
-  );
+
+const theme = extendTheme({
+  colors: {
+    brand: {
+      900: "#090F58",
+    800: "#32289B",
+    700: "#7D67EC",
+    600: "#EC336B",
+    500: "#FFFFFF"
+    },
+  },
+})
+
+
+export default class App extends Component {
+
+  state = {
+    user: null,
+    loggedIn: false
+  }
+
+  logIn = (userData) => {
+    this.setState({
+      user: userData.user.username,
+      loggedIn: true
+    })
+  }
+
+  render() {
+      return (
+        <ChakraProvider theme={theme}>
+         <ColorModeProvider options={{
+            useSystsemColorMode: true
+          }}>
+            <CSSReset/>
+            <MainPage />
+            
+            {/* <Login logIn={this.logIn} /> */}
+          </ColorModeProvider>
+        </ChakraProvider>
+      )
+  }
 }
 
-export default App;
+
