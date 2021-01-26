@@ -23,7 +23,7 @@ class PreviousPostContainer extends Component {
             <Box  w='700px' borderWidth="1px" borderColor="black" >
                {this.props.oldPosts.map(post =>
                    <Flex>
-                        <Box h="30px" bg="tomato" m="5px" >
+                        <Box h="30px" m="5px" >
                             {post.post.content}
                         </Box>
                         

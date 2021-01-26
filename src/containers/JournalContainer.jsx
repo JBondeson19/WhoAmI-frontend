@@ -13,7 +13,7 @@ import { FiRepeat } from 'react-icons/fi'
 let oldPosts = [
    {post: {id: 1, content: "Today I watched the world burn"},tags:["angry", "happy", "complex", "curious"]},
    {post: {id: 2, content: "What's going on, where are my shoes?"},tags:["cool"]},
-   {post: {id: 3, content: "We are moving on"}, tags:["relieved"]},
+   {post: {id: 3, content: "Presentations are almost done"}, tags:["relieved"]},
 ]
 
 class JournalContainer extends React.Component {

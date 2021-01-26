@@ -6,6 +6,7 @@ import {
     Box,
     Heading,
     Center,
+    Spacer
 } from "@chakra-ui/react"
 
 export default function PostContainer(props) {
@@ -16,24 +17,25 @@ export default function PostContainer(props) {
             </Center>
            
             <Box borderWidth="1px" borderColor="black">
-                <Box p="6" borderWidth="1px" borderColor="black">
-                    <Center>
-                        <Heading as="h5" size="sm">Today I'm thinking about:</Heading>
-                    </Center>
-                    <Post addPost={props.addPost} />
-                </Box>
-                <Box p="6" borderWidth="1px" borderColor="black">
-                <Center>
-                    <Heading as="h5" size="sm">Today I'm feeling:</Heading>
-                </Center>
-                </Box>
+                <Box >
+                    <Box p="6" >
+                        <Center>
+                            <Heading as="h5" size="sm">Today I'm feeling:</Heading>
+                        </Center>
+                    </Box>
                     <TagList 
                         enterFeelings={props.enterFeelings} 
                         submitTags={props.submitTags}
                         removeTag={props.removeTag}
                         addTags={props.addPost}
                     />
-            </Box>
+                    <Spacer />
+                </Box>
+                    <Center>
+                        <Heading as="h5" size="sm">Today I'm thinking about:</Heading>
+                    </Center>
+                    <Post addPost={props.addPost} />
+                </Box>
         </Stack>
     )
 }

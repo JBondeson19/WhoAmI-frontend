@@ -48,7 +48,7 @@ const Navbar = (props) => {
         flexGrow={1}
       >
         <MenuItems>Home</MenuItems>
-        <MenuItems>Examples</MenuItems>
+        <MenuItems>About</MenuItems>
         <MenuItems>Blog</MenuItems>
       </Box>
 

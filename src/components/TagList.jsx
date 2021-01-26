@@ -20,7 +20,7 @@ class TagList extends React.Component {
             <Box >
                 <List>
                     <ListItem>
-                        <Input placeholder="feelings" onKeyDown={this.props.enterFeelings}   />
+                        <Input placeholder="feelings" onKeyDown={this.props.enterFeelings} variant="filled"  />
                     </ListItem>
                     {this.props.submitTags.map(tag=> 
                     <ListItem>

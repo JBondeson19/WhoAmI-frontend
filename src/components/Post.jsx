@@ -9,7 +9,7 @@ class Post extends Component {
 
     render() {
         return (
-            <Box>
+            <Box >
                 <Textarea onChange={(event) =>
                  this.setState({ text: event.target.value})
                 }></Textarea>
